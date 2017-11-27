@@ -198,4 +198,20 @@ Gameplay Progression:
 * Other community or team contact
 Jian Jin, Takinah Scales, Jonathan Keku
 
-### Licenses ###
+### Sources ###
+Programming
+	https://www.youtube.com/watch?v=I4z5aAg09bM&ab_channel=FriendlyCosmonaut
+		Dialogue Boxes
+	https://www.udemy.com/make-an-action-rpg-in-gamemaker-studio-2/
+		Player Movement
+		Enemy Movement
+		Player hitboxes
+		Enemy hitboxes
+		Room change
+		Pause Menu
+	https://www.youtube.com/playlist?list=PLphK0p6U4fEB_ehTeJDyyEYv2M9UBXiyT
+		Used for sliding view when exiting room
+Music
+	http://ourmusicbox.com
+Art
+
