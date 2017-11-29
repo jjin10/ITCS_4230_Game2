@@ -342,7 +342,11 @@
     <instance objName="obj_enemy_wall" x="256" y="288" name="inst_D02B7B1E" locked="0" code="" scaleX="7" scaleY="1" colour="4278190335" rotation="0"/>
     <instance objName="obj_enemy_wall" x="400" y="288" name="inst_A45BD44C" locked="0" code="" scaleX="10.6666669845581" scaleY="1" colour="4278190335" rotation="0"/>
     <instance objName="obj_start" x="352" y="192" name="inst_game_to_room2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="480" y="304" name="inst_7C946033" locked="0" code="room_ = rm_game;&#xA;start_ = inst_room2_to_game&#xA;" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="480" y="304" name="inst_7C946033" locked="0" code="room_ = rm_game;&#xA;start_ = inst_room2_to_game" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_key_carry" x="416" y="224" name="inst_14F40AA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_locked_door" x="368" y="288" name="inst_DA4B0264" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_locked_door" x="400" y="336" name="inst_B8C1A3F1" locked="0" code="" scaleX="1" scaleY="2.13333344459534" colour="4294967295" rotation="0"/>
+    <instance objName="obj_key_carry" x="368" y="352" name="inst_F699B716" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_tileset" x="272" y="208" w="16" h="16" xo="112" yo="64" id="10000107" name="inst_D935C400" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

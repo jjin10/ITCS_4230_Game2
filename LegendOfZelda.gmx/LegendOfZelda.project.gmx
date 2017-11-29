@@ -51,6 +51,7 @@
       <sprite>sprites\spr_bomb_col</sprite>
       <sprite>sprites\spr_parry_col</sprite>
       <sprite>sprites\spr_attack_col</sprite>
+      <sprite>sprites\spr_pickup_col</sprite>
       <sprite>sprites\spr_door_col</sprite>
       <sprite>sprites\spr_enemy_col</sprite>
       <sprite>sprites\spr_block</sprite>
@@ -103,6 +104,7 @@
       <script>scripts\is_target.gml</script>
     </scripts>
     <script>scripts\porcupine_attack.gml</script>
+    <script>scripts\can_pickup.gml</script>
     <scripts name="Hurtbox Scripts">
       <script>scripts\initialize_hurtbox_entity.gml</script>
       <script>scripts\hurtbox_entity_can_be_hit_by.gml</script>
@@ -131,16 +133,24 @@
       <object>objects\obj_wall</object>
       <object>objects\obj_col</object>
       <object>objects\obj_door</object>
+      <object>objects\obj_locked_door</object>
       <object>objects\obj_start</object>
     </objects>
     <objects name="Items">
       <object>objects\obj_pickup</object>
+      <object>objects\obj_carry</object>
       <object>objects\obj_gem</object>
+      <object>objects\obj_key_carry</object>
       <object>objects\obj_heart</object>
     </objects>
+    <object>objects\obj_view_bugfix</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_altar</room>
+    <room>rooms\rm_city</room>
+    <room>rooms\rm_desert</room>
+    <room>rooms\rm_forest</room>
     <room>rooms\rm_game</room>
     <room>rooms\room2</room>
   </rooms>

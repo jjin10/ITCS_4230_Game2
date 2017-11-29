@@ -35,6 +35,9 @@ evade_speed_ = 2;
 dir_facing_ = dir.right;
 dir_evade_ = 0;
 anim_speed_ = 0.2;
+carrying_ = noone;
+alarm_set(3, 1);
+alarm_set(4, 1);
 
 
 enum player {
@@ -45,9 +48,10 @@ enum player {
     push_block,
     parry,
     hit,
-    knockback,
     pickup,
+    carry,
     throw,
+    wait,
     item_get
 }
 
@@ -96,10 +100,103 @@ sprite_[player.hit, dir.up] = spr_player_up;
 sprite_[player.hit, dir.left] = spr_player_left;
 sprite_[player.hit, dir.down] = spr_player_down;
 
+sprite_[player.pickup, dir.right] = spr_player_right;
+sprite_[player.pickup, dir.up] = spr_player_up;
+sprite_[player.pickup, dir.left] = spr_player_left;
+sprite_[player.pickup, dir.down] = spr_player_down;
+
+sprite_[player.carry, dir.right] = spr_player_right;
+sprite_[player.carry, dir.up] = spr_player_up;
+sprite_[player.carry, dir.left] = spr_player_left;
+sprite_[player.carry, dir.down] = spr_player_down;
+
+sprite_[player.throw, dir.right] = spr_player_right;
+sprite_[player.throw, dir.up] = spr_player_up;
+sprite_[player.throw, dir.left] = spr_player_left;
+sprite_[player.throw, dir.down] = spr_player_down;
+
+sprite_[player.wait, dir.right] = spr_player_right;
+sprite_[player.wait, dir.up] = spr_player_up;
+sprite_[player.wait, dir.left] = spr_player_left;
+sprite_[player.wait, dir.down] = spr_player_down;
+
 image_speed = 0;
 image_index = 0;
 
 attack = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sliding View
+view_x = view_xview;
+view_y = view_yview;
+view_x1 = view_x;
+view_y1 = view_y;
+view_xspeed = 24;
+view_yspeed = view_xspeed div 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Push Block Recovery
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Parry Recovery
 </string>
           </argument>
         </arguments>
@@ -204,6 +301,42 @@ if global.player_health &lt;= 0 and !invincible_ {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sliding View
+if global.player_health &gt; 0 &amp;&amp; global.dont_delay{
+    if obj_player.x &gt; view_x + view_wview view_x += view_wview; // Right
+    if obj_player.x &lt; view_x view_x -= view_wview; // Left
+    if obj_player.y &gt; view_y + view_hview view_y += view_hview; // Down
+    if obj_player.y &lt; view_y view_y -= view_hview; // Up
+    
+    if view_x1 &lt; view_x view_x1 = min(view_x,view_x1 + view_xspeed);
+    if view_x1 &gt; view_x view_x1 = max(view_x,view_x1 - view_xspeed);
+    if view_y1 &lt; view_y view_y1 = min(view_y,view_y1 + view_yspeed);
+    if view_y1 &gt; view_y view_y1 = max(view_y,view_y1 - view_yspeed);
+    
+    
+    view_xview = view_x1;
+    view_yview = view_y1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_door">
       <action>
@@ -225,6 +358,9 @@ if global.player_health &lt;= 0 and !invincible_ {
             <string>/// Goto other room
 global.player_start_position = other.start_;
 obj_player.persistent = true;
+global.dont_delay = false;
+obj_game.alarm[0] = 1;
+if instance_exists(obj_player.carrying_) obj_player.carrying_.persistent = true;
 room_goto(other.room_);
 </string>
           </argument>
@@ -305,6 +441,185 @@ if hurtbox_entity_can_be_hit_by(other){
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="20">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Wait State
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="19">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Throw State
+image_speed = 0;
+var _x_input = obj_input.right - obj_input.left;
+var _y_input = obj_input.down - obj_input.up;
+carrying_.PICKED_UP = 0;
+carrying_.z_speed_ = -2;
+carrying_.thrown_ = true;
+/*
+var _angle = dir_facing_ * 90
+var _frames = 6;
+var _damage = 0;
+var _knockback = 16;
+var _col = create_col(spr_bomb_col, x, y, _angle, _frames, array(obj_carry), _damage, _knockback);
+audio_play_sound(a_swipe, 8, false);
+*/
+
+carrying_.drop_x_= x+(_x_input*10);
+carrying_.drop_y_ = y+(_y_input*10);
+
+carrying_ = noone;
+
+starting_state_ = player.move;
+state_ = starting_state_;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="18">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Carry State
+image_speed = 0;
+starting_state_ = player.carry;
+
+//Input
+var _x_input = obj_input.right - obj_input.left;
+var _y_input = obj_input.down - obj_input.up;
+var _block_input = obj_input.action2_pressed;
+var _parry_input = obj_input.action3_pressed;
+var _interact_input = obj_input.action4_pressed;
+var _input_dir = point_direction(0, 0, _x_input, _y_input);
+
+//Block
+if _block_input == true {
+    image_index = 0;
+    state_ = player.block;
+}
+
+//Parry
+if _parry_input == true {
+    image_index = 0;
+    alarm_set(1, 8);
+    state_ = player.parry;
+}
+
+//Movement
+if _x_input == 0 and _y_input == 0 {
+    image_index = 0;
+    image_speed = 0;
+    apply_friction_to_movement_entity();
+} else {
+    image_speed = anim_speed_;
+    get_dir_facing(_input_dir);
+    add_movement_maxspeed(_input_dir, accel_, max_speed_);   
+}
+
+if _interact_input == true {
+    image_index = 0;
+    state_ = player.throw;
+}
+
+sprite_index = sprite_[state_,dir_facing_];
+move_movement_entity(false);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="17">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Pickup State
+image_speed = 0;
+var _angle = dir_facing_ * 90
+var _frames = 1;
+var _damage = 0;
+var _knockback = 0;
+var _col = create_col(spr_pickup_col, x, y, _angle, _frames, array(obj_carry), _damage, _knockback);
+audio_play_sound(a_swipe, 8, false);
+switch dir_facing_ {
+    case dir.up: _col.y -= 4; break
+    case dir.down: _col.y -= 4; break
+    default: _col.y -= 0;
+}
+
+carrying_ = _col.targets_[0];
+
+if (carrying_ == noone){
+    state_ = player.move;
+} else {
+    state_ = player.carry;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="16">
       <action>
         <libid>1</libid>
@@ -329,7 +644,9 @@ apply_friction_to_movement_entity();
 
 if speed_ == 0 {
     state_ = starting_state_;
-}
+} /*else {
+    state_ = player.carry;
+}*/
 </string>
           </argument>
         </arguments>
@@ -354,9 +671,9 @@ if speed_ == 0 {
             <kind>1</kind>
             <string>///Parry State
 image_speed = 0;
-
+alarm_set(3, 6);
 if alarm_get(1) == 0 {
-    state_ = player.move;
+    state_ = starting_state_;
 }
 </string>
           </argument>
@@ -382,7 +699,7 @@ if alarm_get(1) == 0 {
             <kind>1</kind>
             <string>///Push_Block State
 image_speed = 0;
-
+alarm_set(4, 12);
 if alarm_get(2) == 0 {
     state_ = player.block;
 }
@@ -415,9 +732,9 @@ image_index = 0;
 var _block_input = obj_input.action2_pressed;
 var _push_block_input = obj_input.action3_pressed;
 
-if _push_block_input == true {
+if _push_block_input == true &amp;&amp; alarm_get(4) &lt;= 0{
     image_index = 0;
-    alarm_set(2, 12);
+    alarm_set(2, 14);
     state_ = player.push_block;
 }
 
@@ -543,7 +860,7 @@ if _block_input == true {
 }
 
 //Parry
-if _parry_input == true {
+if _parry_input == true &amp;&amp; alarm_get(3) &lt;= 0{
     image_index = 0;
     alarm_set(1, 8);
     state_ = player.parry;
@@ -564,6 +881,13 @@ if _x_input == 0 and _y_input == 0 {
     add_movement_maxspeed(_input_dir, accel_, max_speed_);   
 }
 
+if _interact_input == true {
+    image_index = 0;
+    if(can_pickup()){
+        state_ = player.pickup;
+    }
+}
+
 if _attack_input == true {
     image_index = 0;
     state_ = player.attack;
@@ -571,6 +895,31 @@ if _attack_input == true {
 
 sprite_index = sprite_[state_,dir_facing_];
 move_movement_entity(false);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Room view
+view_x1 = view_xview;
+view_y1 = view_yview;
 </string>
           </argument>
         </arguments>
