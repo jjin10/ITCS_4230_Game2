@@ -4,19 +4,182 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_music</sound>
+    <sound>sound\a_hit</sound>
+    <sound>sound\a_swipe</sound>
+    <sound>sound\a_hurt</sound>
+    <sound>sound\a_porcupine_attack</sound>
+    <sound>sound\a_music</sound>
+    <sound>sound\a_item</sound>
+    <sound>sound\a_collect_item</sound>
+    <sound>sound\a_pause</sound>
+    <sound>sound\a_unpause</sound>
+  </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_main</sprite>
-    <sprite>sprites\weapon</sprite>
+    <sprite>sprites\spr_box</sprite>
+    <sprite>sprites\spr_npc2</sprite>
+    <sprite>sprites\spr_npc1</sprite>
+    <sprites name="Player">
+      <sprites name="Attack">
+        <sprite>sprites\spr_atk_down</sprite>
+        <sprite>sprites\spr_atk_left</sprite>
+        <sprite>sprites\spr_atk_right</sprite>
+        <sprite>sprites\spr_atk_up</sprite>
+      </sprites>
+      <sprites name="Move">
+        <sprite>sprites\spr_player_down</sprite>
+        <sprite>sprites\spr_player_right</sprite>
+        <sprite>sprites\spr_player_up</sprite>
+        <sprite>sprites\spr_player_left</sprite>
+      </sprites>
+      <sprites name="Evade">
+        <sprite>sprites\spr_evade_down</sprite>
+        <sprite>sprites\spr_evade_up</sprite>
+        <sprite>sprites\spr_evade_left</sprite>
+        <sprite>sprites\spr_evade_right</sprite>
+      </sprites>
+      <sprite>sprites\spr_shield</sprite>
+      <sprite>sprites\spr_shield_pulse</sprite>
+      <sprite>sprites\spr_parry</sprite>
+      <sprite>sprites\sprite42</sprite>
+    </sprites>
+    <sprite>sprites\spr_sword</sprite>
+    <sprite>sprites\spr_death</sprite>
+    <sprite>sprites\spr_projectile</sprite>
+    <sprite>sprites\spr_water</sprite>
+    <sprite>sprites\spr_grass</sprite>
+    <sprites name="Collisions">
+      <sprite>sprites\spr_start_col</sprite>
+      <sprite>sprites\spr_bomb_col</sprite>
+      <sprite>sprites\spr_parry_col</sprite>
+      <sprite>sprites\spr_attack_col</sprite>
+      <sprite>sprites\spr_pickup_col</sprite>
+      <sprite>sprites\spr_door_col</sprite>
+      <sprite>sprites\spr_trap_col</sprite>
+      <sprite>sprites\spr_enemy_col</sprite>
+      <sprite>sprites\spr_block</sprite>
+    </sprites>
+    <sprites name="Enemies">
+      <sprite>sprites\spr_enemy_slime</sprite>
+      <sprite>sprites\spr_porcupine_run</sprite>
+      <sprite>sprites\spr_porcupine_attack</sprite>
+      <sprite>sprites\spr_bat</sprite>
+      <sprite>sprites\spr_hornet</sprite>
+      <sprite>sprites\spr_stinger</sprite>
+    </sprites>
+    <sprites name="FX">
+      <sprite>sprites\spr_grass_fx</sprite>
+      <sprite>sprites\spr_hit_fx</sprite>
+      <sprite>sprites\spr_death_fx</sprite>
+      <sprite>sprites\spr_gem_shine</sprite>
+      <sprite>sprites\spr_med_shadow</sprite>
+      <sprite>sprites\spr_small_shadow</sprite>
+    </sprites>
+    <sprites name="Items">
+      <sprite>sprites\spr_gem</sprite>
+      <sprite>sprites\spr_heart</sprite>
+    </sprites>
+    <sprites name="UI">
+      <sprite>sprites\spr_heart_ui</sprite>
+      <sprite>sprites\spr_stamina_ui</sprite>
+      <sprite>sprites\spr_help</sprite>
+    </sprites>
+    <sprite>sprites\spr_font</sprite>
+    <sprite>sprites\spr_fnt_text</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_grid</background>
+    <background>background\bg_tileset</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Movement Scripts">
+      <script>scripts\initialize_movement_entity.gml</script>
+      <script>scripts\add_movement_maxspeed.gml</script>
+      <script>scripts\apply_friction_to_movement_entity.gml</script>
+      <script>scripts\move_movement_entity.gml</script>
+      <script>scripts\set_movement.gml</script>
+      <script>scripts\get_dir_facing.gml</script>
+      <script>scripts\set_sprite_facing.gml</script>
+    </scripts>
+    <scripts name="Helper Scripts">
+      <script>scripts\approach.gml</script>
+      <script>scripts\animation_hit_frame.gml</script>
+      <script>scripts\array.gml</script>
+      <script>scripts\chance.gml</script>
+    </scripts>
+    <scripts name="Hitbox Scripts">
+      <script>scripts\create_col.gml</script>
+      <script>scripts\is_target.gml</script>
+    </scripts>
+    <script>scripts\porcupine_attack.gml</script>
+    <script>scripts\can_pickup.gml</script>
+    <scripts name="Hurtbox Scripts">
+      <script>scripts\initialize_hurtbox_entity.gml</script>
+      <script>scripts\hurtbox_entity_can_be_hit_by.gml</script>
+    </scripts>
+    <scripts name="FX Scripts">
+      <script>scripts\create_animation_fx.gml</script>
+      <script>scripts\draw_self_flash.gml</script>
+    </scripts>
+    <script>scripts\save_date_get_key.gml</script>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_text</font>
+  </fonts>
   <objects name="objects">
-    <object>objects\obj_main_char</object>
-    <object>objects\obj_weapon</object>
+    <object>objects\obj_player</object>
+    <object>objects\obj_npc1</object>
+    <object>objects\obj_npc2</object>
+    <object>objects\obj_textbox</object>
+    <object>objects\obj_sword</object>
+    <object>objects\obj_projectile</object>
+    <object>objects\obj_water</object>
+    <object>objects\obj_grass</object>
+    <objects name="Enemies">
+      <object>objects\obj_enemy_slime</object>
+      <object>objects\obj_enemy</object>
+      <object>objects\obj_porcupine</object>
+      <object>objects\obj_hornet</object>
+      <object>objects\obj_bat</object>
+    </objects>
+    <objects name="Collisions">
+      <object>objects\obj_enemy_wall</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_trap</object>
+      <object>objects\obj_col</object>
+      <object>objects\obj_door</object>
+      <object>objects\obj_locked_door</object>
+      <object>objects\obj_start</object>
+    </objects>
+    <objects name="Items">
+      <object>objects\obj_pickup</object>
+      <object>objects\obj_carry</object>
+      <object>objects\obj_gem</object>
+      <object>objects\obj_key_carry</object>
+      <object>objects\obj_offering</object>
+      <object>objects\obj_heart</object>
+      <object>objects\obj_car</object>
+      <object>objects\obj_boots</object>
+      <object>objects\obj_sopapillas</object>
+    </objects>
+    <objects name="Misc">
+      <object>objects\obj_game</object>
+      <object>objects\obj_input</object>
+      <object>objects\obj_animation_fx</object>
+      <object>objects\obj_spawner</object>
+      <object>objects\obj_altar</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\rm_init</room>
+    <room>rooms\rm_altar</room>
+    <room>rooms\rm_city</room>
+    <room>rooms\rm_desert</room>
+    <room>rooms\rm_forest</room>
+    <room>rooms\rm_game</room>
+    <room>rooms\room2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
