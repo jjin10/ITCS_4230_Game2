@@ -76,7 +76,6 @@
     <sprites name="UI">
       <sprite>sprites\spr_heart_ui</sprite>
       <sprite>sprites\spr_stamina_ui</sprite>
-      <sprite>sprites\spr_help</sprite>
     </sprites>
     <sprite>sprites\spr_font</sprite>
   </sprites>
@@ -114,7 +113,6 @@
       <script>scripts\create_animation_fx.gml</script>
       <script>scripts\draw_self_flash.gml</script>
     </scripts>
-    <script>scripts\save_date_get_key.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -127,6 +125,9 @@
       <object>objects\obj_enemy</object>
       <object>objects\obj_porcupine</object>
     </objects>
+    <object>objects\obj_game</object>
+    <object>objects\obj_input</object>
+    <object>objects\obj_animation_fx</object>
     <objects name="Collisions">
       <object>objects\obj_enemy_wall</object>
       <object>objects\obj_wall</object>
@@ -140,18 +141,7 @@
       <object>objects\obj_carry</object>
       <object>objects\obj_gem</object>
       <object>objects\obj_key_carry</object>
-      <object>objects\obj_offering</object>
       <object>objects\obj_heart</object>
-      <object>objects\obj_car</object>
-      <object>objects\obj_boots</object>
-      <object>objects\obj_sopapillas</object>
-    </objects>
-    <objects name="Misc">
-      <object>objects\obj_game</object>
-      <object>objects\obj_input</object>
-      <object>objects\obj_animation_fx</object>
-      <object>objects\obj_spawner</object>
-      <object>objects\obj_altar</object>
     </objects>
   </objects>
   <rooms name="rooms">

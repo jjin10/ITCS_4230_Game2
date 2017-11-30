@@ -29,6 +29,7 @@
 
 //runs code in parent as well as code in this event
 event_inherited();
+initialize_movement_entity(0.5, 0.5, obj_wall);
 initialize_movement_entity(0.5, 0.5, obj_enemy_wall);
 
 enum porcupine {

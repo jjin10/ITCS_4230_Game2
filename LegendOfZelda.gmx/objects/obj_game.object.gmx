@@ -57,8 +57,6 @@ display_set_gui_size(_view_width, _view_height);
 paused_ = false;
 paused_sprite_ = noone;
 paused_sprite_scale_ = display_get_gui_width()/view_wport[0];
-
-save_data = ds_map_create();
 </string>
           </argument>
         </arguments>
