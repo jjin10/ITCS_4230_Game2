@@ -17,6 +17,9 @@
     <sound>sound\a_unpause</sound>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\spr_box</sprite>
+    <sprite>sprites\spr_npc2</sprite>
+    <sprite>sprites\spr_npc1</sprite>
     <sprites name="Player">
       <sprites name="Attack">
         <sprite>sprites\spr_atk_down</sprite>
@@ -83,6 +86,7 @@
       <sprite>sprites\spr_help</sprite>
     </sprites>
     <sprite>sprites\spr_font</sprite>
+    <sprite>sprites\spr_fnt_text</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grid</background>
@@ -121,8 +125,14 @@
     </scripts>
     <script>scripts\save_date_get_key.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_text</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_player</object>
+    <object>objects\obj_npc1</object>
+    <object>objects\obj_npc2</object>
+    <object>objects\obj_textbox</object>
     <object>objects\obj_sword</object>
     <object>objects\obj_projectile</object>
     <object>objects\obj_water</object>
@@ -161,7 +171,6 @@
       <object>objects\obj_spawner</object>
       <object>objects\obj_altar</object>
     </objects>
-    <object>objects\object31</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
