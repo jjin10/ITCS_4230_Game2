@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>///Initialize Variables
 damage_ = 1;
 knockback_ = 4;
 targets_ = array(obj_player, obj_enemy);

@@ -82,14 +82,17 @@ if !is_undefined(_offering_count_data) &amp;&amp; _offering_count_data &gt; 0{
             <string>///Recieve Offering
 if other.object_index == obj_car {
     car_ = true;
+    global.event = 1;
     ds_map_replace(obj_game.save_data, "car", true);
 }
 if other.object_index == obj_sopapillas {
     sopapillas_ = true;
+    global.event = 2;
     ds_map_replace(obj_game.save_data, "sopapillas", true);
 }
 if other.object_index == obj_boots {
     boots_ = true;
+    global.event = 3;
     ds_map_replace(obj_game.save_data, "boots", true);
 }
 
@@ -105,12 +108,15 @@ offering_count_+= global.gems;
 global.gems = 0;
 ds_map_replace(obj_game.save_data, "offering_count", offering_count_);
 
-if offering_count &gt;= offering_goal_ {
-    global.player_max_health += 2;
+if offering_count_ &gt;= offering_goal_ {
+    global.player_max_health += 1;
     global.player_health = global.player_max_health;
+    
+    global.player_max_shield += 1;
+    global.player_shield = global.player_max_shield;
 }
 if boots_ &amp;&amp; car_ &amp;&amp; sopapillas_{
-    room_goto(rm_game);
+    room_goto(rm_credits);
 }
 </string>
           </argument>

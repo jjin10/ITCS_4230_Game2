@@ -33,18 +33,18 @@ initialize_movement_entity(0.2, 0.5, obj_wall);
 
 max_health_ = 2;
 health_ = max_health_;
-/*
+
 enum bat {
     hit,
     move,
     attack,
-}*/
+}
 
 starting_state_ = bat.move;
 state_ = starting_state_;
 range_ = 64;
 image_index = 0;
-image_speed = 0.8;
+image_speed = 0.4;
 image_xscale = choose(1,-1);
 
 alarm[1] = random_range(0,1) * room_speed;
@@ -94,8 +94,7 @@ alarm[1] = random_range(0,1) * room_speed;
           <argument>
             <kind>1</kind>
             <string>/// Attack State
-image_index = 0;
-image_speed = 0.9;
+image_speed = 0.6;
 set_sprite_facing();
 if not instance_exists(obj_player){
     state_ = bat.move;
@@ -142,10 +141,9 @@ if _player{
           <argument>
             <kind>1</kind>
             <string>///Move State
-image_index = 0;
-image_speed = 0.5;
+image_speed = 0.4;
 set_sprite_facing();
-add_movement_maxspeed(direction_, 0.05, 0.1);
+add_movement_maxspeed(direction_, 0.05, 0.35);
 move_movement_entity(true);
 if alarm[1] &lt;= 0 {
     alarm[1] = random_range(2,4) * room_speed;
@@ -155,8 +153,6 @@ if alarm[1] &lt;= 0 {
 if instance_exists(obj_player) and distance_to_object(obj_player) &lt;= range_{
     state_ = bat.attack;
 }
-
-set_sprite_facing();
 
 </string>
           </argument>

@@ -34,6 +34,7 @@ global.font = font_add_sprite_ext(spr_font, _font_string, true, 1);
 draw_set_font(global.font);
 
 global.dont_delay = true;
+global.event = 0;
 
 global.player_max_health = 4;
 global.player_health = global.player_max_health;
@@ -264,30 +265,31 @@ room_goto_next();
             <string>///Draw UI
 var _gui_width =  display_get_gui_width();
 var _gui_height =  display_get_gui_height();
-
-if sprite_exists(paused_sprite_) {
-    draw_sprite_ext(paused_sprite_, 0, 0, 0, paused_sprite_scale_, paused_sprite_scale_, 0, c_white, 1);
-    draw_set_alpha(0.6);
-    draw_rectangle_colour(0, 0, _gui_width, _gui_height, c_black, c_black, c_black, c_black, false)
-    draw_set_alpha(1);
+if room != rm_menu &amp;&amp; room != rm_credits {
+    if sprite_exists(paused_sprite_) {
+        draw_sprite_ext(paused_sprite_, 0, 0, 0, paused_sprite_scale_, paused_sprite_scale_, 0, c_white, 1);
+        draw_set_alpha(0.6);
+        draw_rectangle_colour(0, 0, _gui_width, _gui_height, c_black, c_black, c_black, c_black, false)
+        draw_set_alpha(1);
+    }
+    
+    for (var _i=0; _i&lt;global.player_max_health; _i++){
+        var _filled = _i &lt; global.player_health;
+        draw_sprite(spr_heart_ui,_filled, 4+15*_i, 4);
+    }
+    
+    for (var _i=0; _i&lt;global.player_max_shield; _i++){
+        var _filled = _i &lt; global.player_shield;
+        draw_sprite(spr_stamina_ui,_filled, 4+15*_i, 8);
+    }
+    draw_set_colour(c_white);
+    var _gem_string = string(global.gems);
+    var _text_width = string_width(_gem_string);
+    var _x = _gui_width - _text_width + 4;
+    var _y = _gui_height - 16 + 4;
+    draw_sprite(spr_gem, 0, _x-16, _y+5);
+    draw_text(_x-8, _y-1, _gem_string);
 }
-
-for (var _i=0; _i&lt;global.player_max_health; _i++){
-    var _filled = _i &lt; global.player_health;
-    draw_sprite(spr_heart_ui,_filled, 4+15*_i, 4);
-}
-
-for (var _i=0; _i&lt;global.player_max_shield; _i++){
-    var _filled = _i &lt; global.player_shield;
-    draw_sprite(spr_stamina_ui,_filled, 4+15*_i, 8);
-}
-
-var _gem_string = string(global.gems);
-var _text_width = string_width(_gem_string);
-var _x = _gui_width - _text_width + 4;
-var _y = _gui_height - 16 + 4;
-draw_sprite(spr_gem, 0, _x-16, _y+5);
-draw_text(_x-8, _y-1, _gem_string);
 </string>
           </argument>
         </arguments>

@@ -19,7 +19,7 @@ if instance_exists(obj_carry){
 var _distance_to_carry = point_distance(x,y, cx, cy);
 var _distance_to_spawner = point_distance(x,y, sx, sy);
 
-if min(_distance_to_carry, _distance_to_spawner) < 16{
+if min(_distance_to_carry, _distance_to_spawner) < 12{
     return true;
 }
 

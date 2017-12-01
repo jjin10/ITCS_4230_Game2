@@ -57,7 +57,13 @@ Edita Moves/Mechanics:
 	
 	Parry (C) shielding just before a hit puts the enemy in a stunned state
 	
-	Interact (Space) talk/pickup and drop items
+	Interact/Pickup (Space) talk/pickup and drop items
+	
+	Reset (R) Reset Game
+	
+	Pause (P/Enter) Pause Game
+	
+	End Game (esc)
 
 Items/Pickups
 

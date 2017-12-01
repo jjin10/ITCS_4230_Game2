@@ -17,9 +17,6 @@
     <sound>sound\a_unpause</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_box</sprite>
-    <sprite>sprites\spr_npc2</sprite>
-    <sprite>sprites\spr_npc1</sprite>
     <sprites name="Player">
       <sprites name="Attack">
         <sprite>sprites\spr_atk_down</sprite>
@@ -51,6 +48,9 @@
     <sprite>sprites\spr_grass</sprite>
     <sprites name="Collisions">
       <sprite>sprites\spr_start_col</sprite>
+      <sprite>sprites\spr_trigger_col</sprite>
+      <sprite>sprites\spr_enemy_spawner</sprite>
+      <sprite>sprites\spr_spawner</sprite>
       <sprite>sprites\spr_bomb_col</sprite>
       <sprite>sprites\spr_parry_col</sprite>
       <sprite>sprites\spr_attack_col</sprite>
@@ -59,6 +59,7 @@
       <sprite>sprites\spr_trap_col</sprite>
       <sprite>sprites\spr_enemy_col</sprite>
       <sprite>sprites\spr_block</sprite>
+      <sprite>sprites\spr_enemy_wall</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\spr_enemy_slime</sprite>
@@ -78,6 +79,7 @@
     </sprites>
     <sprites name="Items">
       <sprite>sprites\spr_gem</sprite>
+      <sprite>sprites\spr_key</sprite>
       <sprite>sprites\spr_heart</sprite>
     </sprites>
     <sprites name="UI">
@@ -87,6 +89,11 @@
     </sprites>
     <sprite>sprites\spr_font</sprite>
     <sprite>sprites\spr_fnt_text</sprite>
+    <sprites name="NPC">
+      <sprite>sprites\spr_npc1</sprite>
+      <sprite>sprites\spr_npc2</sprite>
+      <sprite>sprites\spr_box</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grid</background>
@@ -130,15 +137,7 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_player</object>
-    <object>objects\obj_npc1</object>
-    <object>objects\obj_npc2</object>
-    <object>objects\obj_textbox</object>
-    <object>objects\obj_sword</object>
-    <object>objects\obj_projectile</object>
-    <object>objects\obj_water</object>
-    <object>objects\obj_grass</object>
     <objects name="Enemies">
-      <object>objects\obj_enemy_slime</object>
       <object>objects\obj_enemy</object>
       <object>objects\obj_porcupine</object>
       <object>objects\obj_hornet</object>
@@ -168,18 +167,44 @@
       <object>objects\obj_game</object>
       <object>objects\obj_input</object>
       <object>objects\obj_animation_fx</object>
-      <object>objects\obj_spawner</object>
+      <object>objects\obj_trigger</object>
+    </objects>
+    <objects name="NPC">
       <object>objects\obj_altar</object>
+      <object>objects\obj_npc1_example</object>
+      <object>objects\obj_npc2_example</object>
+      <object>objects\obj_textbox</object>
+      <object>objects\obj_npc</object>
+    </objects>
+    <objects name="Projectiles">
+      <object>objects\obj_stinger</object>
+    </objects>
+    <objects name="Spawners">
+      <object>objects\obj_spawner</object>
+      <object>objects\obj_item_spawner</object>
+      <object>objects\obj_enemy_spawner</object>
+      <object>objects\obj_porcupine_spawner</object>
+      <object>objects\obj_bat_spawner</object>
+      <object>objects\obj_hornet_spawner</object>
+    </objects>
+    <objects name="Decorations">
+      <object>objects\obj_grass</object>
+      <object>objects\obj_water</object>
+    </objects>
+    <objects name="UI">
+      <object>objects\obj_UI_start</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_altar</room>
+    <room>rooms\rm_forest</room>
     <room>rooms\rm_city</room>
     <room>rooms\rm_desert</room>
-    <room>rooms\rm_forest</room>
-    <room>rooms\rm_game</room>
-    <room>rooms\room2</room>
+    <room>rooms\rm_menu</room>
+    <room>rooms\rm_credits</room>
+    <room>rooms\rm_test</room>
+    <room>rooms\rm_test_2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

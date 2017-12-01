@@ -30,12 +30,13 @@ initialize_movement_entity(0.5, 1, obj_wall);
 initialize_hurtbox_entity();
 grd = sprite_width;
 accel_ = 0.5;
-max_speed_ = 1.5;
+max_speed_ = 1.8;
 evade_speed_ = 2;
 dir_facing_ = dir.right;
 dir_evade_ = 0;
 anim_speed_ = 0.2;
 carrying_ = noone;
+view_stable = true;
 alarm_set(3, 1);
 alarm_set(4, 1);
 alarm_set(5, 1);
@@ -341,17 +342,29 @@ if global.player_health &lt;= 0 and !invincible_ {
           <argument>
             <kind>1</kind>
             <string>///Sliding View
+view_stable = true;
 if global.player_health &gt; 0 &amp;&amp; global.dont_delay{
     if obj_player.x &gt; view_x + view_wview view_x += view_wview; // Right
     if obj_player.x &lt; view_x view_x -= view_wview; // Left
     if obj_player.y &gt; view_y + view_hview view_y += view_hview; // Down
     if obj_player.y &lt; view_y view_y -= view_hview; // Up
     
-    if view_x1 &lt; view_x view_x1 = min(view_x,view_x1 + view_xspeed);
-    if view_x1 &gt; view_x view_x1 = max(view_x,view_x1 - view_xspeed);
-    if view_y1 &lt; view_y view_y1 = min(view_y,view_y1 + view_yspeed);
-    if view_y1 &gt; view_y view_y1 = max(view_y,view_y1 - view_yspeed);
-    
+    if view_x1 &lt; view_x {
+        view_x1 = min(view_x,view_x1 + view_xspeed);
+        view_stable = false;
+    }
+    if view_x1 &gt; view_x {
+        view_x1 = max(view_x,view_x1 - view_xspeed);
+        view_stable = false;
+    }
+    if view_y1 &lt; view_y {
+        view_y1 = min(view_y,view_y1 + view_yspeed);
+        view_stable = false;
+    }
+    if view_y1 &gt; view_y {
+        view_y1 = max(view_y,view_y1 - view_yspeed);
+        view_stable = false; 
+    } 
     
     view_xview = view_x1;
     view_yview = view_y1;
@@ -464,7 +477,7 @@ if hurtbox_entity_can_be_hit_by(other){
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="20">
+    <event eventtype="7" enumb="21">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -482,6 +495,9 @@ if hurtbox_entity_can_be_hit_by(other){
           <argument>
             <kind>1</kind>
             <string>///Wait State
+image_speed = 0;
+image_index = 0;
+
 </string>
           </argument>
         </arguments>
@@ -835,7 +851,7 @@ if animation_hit_frame(image_number - 1) {
             <kind>1</kind>
             <string>///Attack State
 image_speed = 0.2;
-alarm_set(5, 14);
+alarm_set(5, 4);
 if animation_hit_frame(1) {
     var _angle = dir_facing_ * 90
     var _frames = 3;
@@ -910,10 +926,10 @@ if _x_input == 0 and _y_input == 0 {
 } else {
     image_speed = anim_speed_;
     get_dir_facing(_input_dir);
-    if _evade_input == true {
-        image_index = 0;
-        state_ = player.evade;
-    }
+    //if _evade_input == true {
+        //image_index = 0;
+        //state_ = player.evade;
+    //}
     add_movement_maxspeed(_input_dir, accel_, max_speed_);   
 }
 

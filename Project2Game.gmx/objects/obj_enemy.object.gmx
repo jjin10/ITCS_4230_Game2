@@ -34,6 +34,7 @@ health_ = max_health_;
 speed_ = 0;
 starting_state_ = noone;
 state_ = starting_state_;
+drop_ = noone;
 
 enum enemy {
     hit,
@@ -71,8 +72,15 @@ enum enemy {
             <string>///Death FX
 create_animation_fx(spr_death_fx, x, y-8, 0.2, true);
 // Chance to spawn item
-if chance(.75) {
-    var _item = choose(obj_gem, obj_heart);
+var _chance = 0.75;
+var _item = choose(obj_gem, obj_heart);
+
+if drop_ != noone{
+    _chance = 1;
+    _item = drop_;
+}
+
+if chance(_chance) {
     instance_create(x, y-8, _item);
 }
 </string>
@@ -187,9 +195,17 @@ if hurtbox_entity_can_be_hit_by(other){
         set_movement(_knockback_direction, other.knockback_)    
         exit;
     }
+    if other.sprite_index = spr_enemy_wall{
+        var _knockback_direction = point_direction(other.x,other.y, x, y);
+        set_movement(_knockback_direction, other.knockback_)    
+        exit;
+    }
     invincible_ = true;
     alarm[0] = room_speed*0.5;
-    health_ -= other.damage_;
+    health_ -= other.damage_
+    if state_ = enemy.stun {
+        health_ -= 1;
+    }
     state_ = enemy.hit;
     var _knockback_direction = point_direction(other.x,other.y, x, y);
     create_animation_fx(spr_hit_fx, x, y-8, 0.2, true);
