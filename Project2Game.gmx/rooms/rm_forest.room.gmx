@@ -1463,26 +1463,117 @@
     <instance objName="obj_wall" x="912" y="336" name="inst_724CAE70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="912" y="352" name="inst_07842A40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="944" y="400" name="inst_28EB208C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_key_carry" x="784" y="464" name="inst_64A3F895" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_heart" x="416" y="608" name="inst_506758F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_heart" x="80" y="448" name="inst_4F8C1EB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_porcupine" x="416" y="416" name="inst_CB3E2CD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_porcupine" x="64" y="256" name="inst_46132E0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_porcupine" x="768" y="624" name="inst_6BD66F69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_trigger" x="960" y="80" name="inst_76E2D582" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_trigger" x="1280" y="80" name="inst_66423BA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_wall" x="960" y="80" name="inst_9D0515DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_wall" x="1280" y="80" name="inst_810D807F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_wall" x="800" y="0" name="inst_DD6B350E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_item_spawner" x="1456" y="80" name="inst_87B2D9C2" locked="0" code="spawn_ = obj_car;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item_spawner" x="784" y="448" name="inst_87B2D9C2" locked="0" code="spawn_ = obj_car;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_porcupine_spawner" x="736" y="96" name="inst_5DF35AFA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_porcupine_spawner" x="784" y="128" name="inst_4C770AC0" locked="0" code="drop_ = obj_key_carry;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="784" y="128" name="inst_4C770AC0" locked="0" code="drop_ = obj_key_carry;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_porcupine_spawner" x="864" y="96" name="inst_8EB2DADA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_locked_door" x="944" y="64" name="inst_2A8354F6" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_locked_door" x="1264" y="64" name="inst_2A8354F6" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="obj_bat_spawner" x="1072" y="64" name="inst_921ACCA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bat_spawner" x="1168" y="96" name="inst_71F6CD39" locked="0" code="drop_ = obj_key_carry;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="1168" y="96" name="inst_71F6CD39" locked="0" code="drop_ = obj_key_carry;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_porcupine_spawner" x="1072" y="128" name="inst_F694C1DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_locked_door" x="1264" y="64" name="inst_607DBCC3" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="64" y="240" name="inst_4AD06E19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="768" y="608" name="inst_529E1E9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="512" y="624" name="inst_E271ADBF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="400" y="416" name="inst_CB9F1B44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="1088" y="448" name="inst_A69232B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="1104" y="256" name="inst_F19A1067" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="800" y="256" name="inst_4824FD64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="1136" y="640" name="inst_2A423AAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="224" y="800" name="inst_5D7ACFC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="1104" y="800" name="inst_78D48D28" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="1408" y="816" name="inst_3019E9F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="1520" y="608" name="inst_2D086BC1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="528" y="448" name="inst_64A41892" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="192" y="240" name="inst_C3EECB18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_porcupine_spawner" x="112" y="96" name="inst_4A662B2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="208" y="96" name="inst_FCD66C41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="160" y="272" name="inst_D75B30F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="464" y="272" name="inst_7314C9C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="544" y="256" name="inst_91C1E6DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="1376" y="640" name="inst_1F0B38DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="1472" y="416" name="inst_5E61E202" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="1360" y="448" name="inst_9AB1CDF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="1504" y="256" name="inst_5B4AB472" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="1312" y="256" name="inst_CDA3A39A" locked="0" code="drop_ = obj_key_carry;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="528" y="608" name="inst_75D0DCC6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="496" y="784" name="inst_6D726C98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="112" y="816" name="inst_75758971" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="1408" y="176" name="inst_E94D15BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="1408" y="352" name="inst_6C09747C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="1120" y="352" name="inst_7387294D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="960" y="256" name="inst_CB7DFC2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="784" y="352" name="inst_5F2C4F99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="320" y="80" name="inst_27DFB3A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="464" y="176" name="inst_8BB228E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="464" y="352" name="inst_B04B7BB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="128" y="176" name="inst_3C6B55C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="128" y="352" name="inst_74350C02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="128" y="528" name="inst_6BFD98C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="128" y="704" name="inst_B73D88E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="464" y="528" name="inst_A7D40ACF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="320" y="800" name="inst_02F6151B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="640" y="800" name="inst_A9B9FBF9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="640" y="624" name="inst_F6AA779B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="960" y="800" name="inst_938DB15C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="960" y="624" name="inst_C49C72C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="1120" y="528" name="inst_00A53FD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="1280" y="800" name="inst_353AFAEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="1408" y="704" name="inst_E3E0A48C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_wall" x="1408" y="528" name="inst_CAB8DEBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trigger" x="1408" y="176" name="inst_AC923259" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="1408" y="352" name="inst_9E44A34C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="1120" y="352" name="inst_5798F7DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="960" y="256" name="inst_32114AF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trigger" x="1408" y="528" name="inst_6FB7C3A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="1120" y="528" name="inst_28685927" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="1408" y="704" name="inst_C3352C24" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="1280" y="800" name="inst_E098C973" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trigger" x="960" y="800" name="inst_418EC117" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trigger" x="640" y="800" name="inst_E9005DBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trigger" x="640" y="624" name="inst_8E589D26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trigger" x="320" y="800" name="inst_22B7F20C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trigger" x="128" y="704" name="inst_9DC45089" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="128" y="528" name="inst_0A95AB3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="128" y="352" name="inst_C9621171" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="464" y="352" name="inst_A96B7100" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="464" y="176" name="inst_3227EC16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="128" y="176" name="inst_C1B7F724" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="320" y="80" name="inst_1D117BF9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trigger" x="784" y="352" name="inst_A6619330" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_bat_spawner" x="48" y="576" name="inst_0ED33AA2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="160" y="656" name="inst_34BF96D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat_spawner" x="240" y="576" name="inst_856C93BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hornet_spawner" x="384" y="784" name="inst_5B18936D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hornet_spawner" x="768" y="816" name="inst_F2FE6479" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hornet_spawner" x="736" y="752" name="inst_8AD642D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hornet_spawner" x="1040" y="592" name="inst_2B1FE9F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hornet_spawner" x="1024" y="736" name="inst_E1475E9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hornet_spawner" x="1312" y="800" name="inst_7899FBA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hornet_spawner" x="1344" y="560" name="inst_2CE26499" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hornet_spawner" x="1520" y="768" name="inst_8A796003" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_locked_door" x="768" y="336" name="inst_601AE552" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trap" x="1376" y="80" name="inst_F2535DBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trap" x="1520" y="48" name="inst_59343352" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trap" x="1536" y="112" name="inst_5B1E5388" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trap" x="864" y="624" name="inst_490A0788" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trap" x="512" y="80" name="inst_5C00FF88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trap" x="176" y="432" name="inst_E4AE51B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trap" x="48" y="400" name="inst_2FB0824C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trap" x="48" y="480" name="inst_DF5C461A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trap" x="400" y="96" name="inst_264BB0E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trigger" x="960" y="624" name="inst_49C48279" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trigger" x="464" y="528" name="inst_FCF63586" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_trigger" x="464" y="352" name="inst_7B1261C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_locked_door" x="944" y="64" name="inst_1B9D66C5" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_locked_door" x="1392" y="336" name="inst_477B0CF4" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item_spawner" x="96" y="432" name="inst_E474DF1C" locked="0" code="spawn_ = obj_key_carry;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item_spawner" x="432" y="608" name="inst_FEBCB049" locked="0" code="spawn_ = obj_heart;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item_spawner" x="128" y="464" name="inst_3944F367" locked="0" code="spawn_ = obj_heart;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

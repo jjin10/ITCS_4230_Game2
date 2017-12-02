@@ -123,6 +123,66 @@ if boots_ &amp;&amp; car_ &amp;&amp; sopapillas_{
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Recieve Offering
+if instance_exists(obj_car){
+    car_ = true;
+    global.event = 1;
+    ds_map_replace(obj_game.save_data, "car", true);
+}
+if instance_exists(obj_sopapillas){
+    sopapillas_ = true;
+    global.event = 2;
+    ds_map_replace(obj_game.save_data, "sopapillas", true);
+}
+if instance_exists(obj_boots){
+    boots_ = true;
+    global.event = 3;
+    ds_map_replace(obj_game.save_data, "boots", true);
+}
+
+if obj_player.carrying_ != noone {
+    obj_player.carrying_.persistent = false;
+    obj_player.carrying_ = noone;
+    obj_player.starting_state_ = player.move;
+    obj_player.state_ = player.move;
+}
+
+offering_count_+= global.gems;
+global.gems = 0;
+ds_map_replace(obj_game.save_data, "offering_count", offering_count_);
+
+if offering_count_ &gt;= offering_goal_ {
+    global.player_max_health += 1;
+    global.player_health = global.player_max_health;
+    
+    global.player_max_shield += 1;
+    global.player_shield = global.player_max_shield;
+}
+if boots_ &amp;&amp; car_ &amp;&amp; sopapillas_{
+    room_goto(rm_credits);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>

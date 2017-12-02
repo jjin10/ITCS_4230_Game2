@@ -101,8 +101,8 @@ if PICKED_UP == 0 {
         }
     }
     if thrown_ {
-        x = lerp(x, drop_x_, 0.2);
-        y = lerp(y, drop_y_, 0.2);
+        x = lerp(x, drop_x_, 0.1);
+        y = lerp(y, drop_y_, 0.1);
         //_x_data = ds_map_replace(obj_game.save_data, x_key_, x);
         //_y_data = ds_map_replace(obj_game.save_data, y_key_, y);
     }

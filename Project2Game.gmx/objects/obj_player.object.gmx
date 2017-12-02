@@ -320,6 +320,7 @@ sprite_index = sprite_[state_,dir_facing_];
 
 if global.player_health &lt;= 0 and !invincible_ {
     instance_destroy();
+    game_restart();
 }
 </string>
           </argument>
@@ -536,8 +537,8 @@ var _col = create_col(spr_bomb_col, x, y, _angle, _frames, array(obj_carry), _da
 audio_play_sound(a_swipe, 8, false);
 */
 
-carrying_.drop_x_= x+(_x_input*10);
-carrying_.drop_y_ = y+(_y_input*10);
+carrying_.drop_x_= x+(_x_input*20);
+carrying_.drop_y_ = y+(_y_input*20);
 
 carrying_ = noone;
 
