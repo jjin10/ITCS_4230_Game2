@@ -115,6 +115,7 @@
       <script>scripts\approach.gml</script>
       <script>scripts\animation_hit_frame.gml</script>
       <script>scripts\array.gml</script>
+      <script>scripts\fill_array.gml</script>
       <script>scripts\chance.gml</script>
     </scripts>
     <scripts name="Hitbox Scripts">
@@ -172,9 +173,9 @@
     </objects>
     <objects name="NPC">
       <object>objects\obj_altar</object>
-      <object>objects\obj_npc1_example</object>
-      <object>objects\obj_npc2_example</object>
-      <object>objects\obj_npc3_example</object>
+      <object>objects\obj_npc_martin</object>
+      <object>objects\obj_npc2_adelita</object>
+      <object>objects\obj_npc3_fernando</object>
       <object>objects\obj_textbox</object>
       <object>objects\obj_npc</object>
     </objects>
@@ -196,9 +197,16 @@
     <objects name="UI">
       <object>objects\obj_UI_start</object>
     </objects>
+    <objects name="Cutscenes">
+      <object>objects\obj_cutscene</object>
+      <object>objects\obj_last_cutscene</object>
+      <object>objects\obj_cutscene_textbox</object>
+    </objects>
+    <object>objects\obj_fade</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_cutscene</room>
     <room>rooms\rm_altar</room>
     <room>rooms\rm_forest</room>
     <room>rooms\rm_city</room>

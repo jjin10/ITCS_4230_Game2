@@ -62,6 +62,35 @@ if !is_undefined(_offering_count_data) &amp;&amp; _offering_count_data &gt; 0{
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// All items gathered
+if boots_ &amp;&amp; car_ &amp;&amp; sopapillas_ &amp;&amp; instance_exists(obj_player){
+    obj_player.state_ = player.wait;
+    obj_player.image_index = 0;
+    obj_player.image_speed = 0;
+    instance_create(x,y,obj_last_cutscene);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_offering">
       <action>
         <libid>1</libid>
@@ -114,9 +143,6 @@ if offering_count_ &gt;= offering_goal_ {
     
     global.player_max_shield += 1;
     global.player_shield = global.player_max_shield;
-}
-if boots_ &amp;&amp; car_ &amp;&amp; sopapillas_{
-    room_goto(rm_credits);
 }
 </string>
           </argument>
@@ -174,9 +200,6 @@ if offering_count_ &gt;= offering_goal_ {
     
     global.player_max_shield += 1;
     global.player_shield = global.player_max_shield;
-}
-if boots_ &amp;&amp; car_ &amp;&amp; sopapillas_{
-    room_goto(rm_credits);
 }
 </string>
           </argument>

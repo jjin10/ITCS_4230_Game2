@@ -785,6 +785,7 @@ view_yview = 352;</code>
     <instance objName="obj_item_spawner" x="256" y="752" name="inst_319FEACE" locked="0" code="spawn_ = obj_gem;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_item_spawner" x="160" y="608" name="inst_4B1F59B4" locked="0" code="spawn_ = obj_gem;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_item_spawner" x="160" y="800" name="inst_A832767B" locked="0" code="spawn_ = obj_key_carry;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="1600" y="448" name="inst_B423FCFC" locked="0" code="" scaleX="0.75" scaleY="2" colour="4294967295" rotation="180"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

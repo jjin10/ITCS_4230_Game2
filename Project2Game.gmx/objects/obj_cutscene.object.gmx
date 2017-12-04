@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -25,25 +25,23 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// @description Insert description here 
-text = "blah blah blah blah blah blah blah blah blah blah blah blah blah"; 
+            <string>/// Initial variable
+myTextBox = noone; 
+myName = "Grandpa"; 
+myActor = array(myName);
+myText[0] = ""; 
 
-page = 0; 
-
-xBuffer = 10; 
-yBuffer = 10; 
-
-boxWidth = sprite_get_width(spr_box) - (2 * xBuffer); 
-stringHeight = string_height(text); 
-creator = noone; 
-charCount = 0; 
-name = noone; 
+if global.event != 0 myActor[0] = "Edita";
+myTextBox = instance_create(view_xview[0]+10,view_yview[0]+121, obj_cutscene_textbox);
+myTextBox.text = myText; 
+myTextBox.creator = self; 
+myTextBox.name = myActor[0];  
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="1" enumb="0">
+    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -60,7 +58,15 @@ name = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_player.state_ = obj_player.starting_state_;
+            <string>/// Alarm
+if global.event == 0{
+    instance_create(obj_game.x,obj_game.y,obj_fade);
+} else {
+    with (instance_create(obj_game.x,obj_game.y,obj_fade)){
+     room_ = rm_credits;
+    }
+}
+myTextBox = noone; 
 </string>
           </argument>
         </arguments>
@@ -83,62 +89,35 @@ name = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Space key pressed
-
-if(keyboard_check_pressed(vk_space)) {
-
-    if(page + 1 &lt; array_length_1d(text)) {
-    page += 1; 
-    name = creator.myActor[page];
-    charCount = 0; 
-    } else {
-        instance_destroy(); 
-        creator.alarm[1] = 1; 
-        }
+            <string>///Dialogue
+switch(global.event){
+    case 0:
+        myActor[0] = "Grandpa";
+        myText[0] = "And then, he jumped from the window, naked as the day he was born, " ;
+        myText[1] = "holding my mother's plate of churros.";
+        myActor[2] = "Cousin Manuel";
+        myText[2] = "The whole plate?!";
+        myActor[3] = "Grandpa";
+        myText[3] = "The whole plate.";
+        myActor[4] = "Edita";
+        myText[4] = "'yawns' He tells that story every year.";
+        myText[5] = "He needs some new material...";
+        myActor[6] = "";
+        myText[6] = "Edita trails off, falling asleep.";
+        myActor = fill_array(myActor,0);
+        break;
+    default:
+        myActor[0] = "Edita";
+        myText[0] = "What happened?"; 
+        myActor[1] = "Grandpa";
+        myText[1] = "So, you’re awake? Did I bore you, niña?"; 
+        myActor[2] = "Grandpa";
+        myText[2] = "Children these days, no respect for their elders..."; 
+        myActor = fill_array(myActor,0);
+        break;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// @description Insert description here
 
-// draw textbox
-draw_sprite(spr_box, 0, x, y); 
-
-// draw text 
-draw_set_colour(c_white);
-draw_set_font(global.font); 
-
-if(charCount &lt; string_length(text[page])) {
-    charCount += 0.5; 
-}
-textPart = string_copy(text[page], 1, charCount); 
-
-// Draw name
-draw_set_halign(fa_center); 
-draw_text(x + (boxWidth/2),y + yBuffer-4, name); 
-draw_set_halign(fa_left); 
-
-// Draw part of text 
-draw_text_ext(x + xBuffer, y + stringHeight + yBuffer, textPart, stringHeight, boxWidth); 
+depth = y; 
 </string>
           </argument>
         </arguments>

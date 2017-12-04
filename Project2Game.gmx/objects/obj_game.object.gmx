@@ -29,7 +29,7 @@
 global.one_second = room_speed;
 instance_create(x,y,obj_input);
 
-var _font_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ.abcdefghijklmnopqrstuvwxyz1234567890&gt;,!':-+";
+var _font_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ.abcdefghijklmnñopqrstuvwxyz1234567890&gt;,?!':-+*";
 global.font = font_add_sprite_ext(spr_font, _font_string, true, 1);
 draw_set_font(global.font);
 
@@ -53,7 +53,6 @@ global.gems = 0;
 var _view_width =  view_wview[0];
 var _view_height =  view_hview[0];
 display_set_gui_size(_view_width, _view_height);
-
 
 paused_ = false;
 paused_sprite_ = noone;
@@ -82,7 +81,7 @@ save_data = ds_map_create();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Reset Sliding View
+            <string>///Reset Sliding View
 obj_player.view_x = view_xview;
 obj_player.view_y = view_yview;
 obj_player.view_x1 = obj_player.view_x;
@@ -202,7 +201,6 @@ if not paused_ {
           <argument>
             <kind>1</kind>
             <string>///Spawn Player at start position
-
 if instance_exists(global.player_start_position){
     if instance_exists(obj_player){
         obj_player.persistent = false;
@@ -216,6 +214,7 @@ if instance_exists(global.player_start_position){
     }
     global.player_start_position = noone;
 }
+
 </string>
           </argument>
         </arguments>
@@ -265,7 +264,7 @@ room_goto_next();
             <string>///Draw UI
 var _gui_width =  display_get_gui_width();
 var _gui_height =  display_get_gui_height();
-if room != rm_menu &amp;&amp; room != rm_credits {
+if room != rm_menu &amp;&amp; room != rm_credits &amp;&amp; room != rm_cutscene{
     if sprite_exists(paused_sprite_) {
         draw_sprite_ext(paused_sprite_, 0, 0, 0, paused_sprite_scale_, paused_sprite_scale_, 0, c_white, 1);
         draw_set_alpha(0.6);

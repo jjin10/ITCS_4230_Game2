@@ -36,7 +36,7 @@ dir_facing_ = dir.right;
 dir_evade_ = 0;
 anim_speed_ = 0.2;
 carrying_ = noone;
-view_stable = true;
+
 alarm_set(3, 1);
 alarm_set(4, 1);
 alarm_set(5, 1);
@@ -152,6 +152,31 @@ view_x1 = view_x;
 view_y1 = view_y;
 view_xspeed = 24;
 view_yspeed = view_xspeed div 2;
+view_stable = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>state_ = starting_state_;
+
 </string>
           </argument>
         </arguments>
@@ -398,7 +423,11 @@ obj_player.persistent = true;
 global.dont_delay = false;
 obj_game.alarm[0] = 1;
 if instance_exists(obj_player.carrying_) obj_player.carrying_.persistent = true;
-room_goto(other.room_);
+var _room = other.room_;
+with(instance_create(x,y,obj_fade)){
+    room_ = _room;
+    fade_rate_ = 0.05;
+}
 </string>
           </argument>
         </arguments>
