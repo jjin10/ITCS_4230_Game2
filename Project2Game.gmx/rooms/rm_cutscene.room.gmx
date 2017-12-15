@@ -8,7 +8,7 @@
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
-  <colour>8421504</colour>
+  <colour>1315860</colour>
   <showcolour>-1</showcolour>
   <code>view_x1 = view_xview;
 view_y1 = view_yview;</code>

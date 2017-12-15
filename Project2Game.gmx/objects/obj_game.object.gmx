@@ -49,7 +49,7 @@ global.player_start_position = inst_game_start;
 
 global.gems = 0;
 
-//audio_play_sound(a_music, 10, true);
+audio_play_sound(a_music, 10, true);
 var _view_width =  view_wview[0];
 var _view_height =  view_hview[0];
 display_set_gui_size(_view_width, _view_height);
@@ -279,7 +279,7 @@ if room != rm_menu &amp;&amp; room != rm_credits &amp;&amp; room != rm_cutscene{
     
     for (var _i=0; _i&lt;global.player_max_shield; _i++){
         var _filled = _i &lt; global.player_shield;
-        draw_sprite(spr_stamina_ui,_filled, 4+15*_i, 8);
+        draw_sprite(spr_stamina_ui,_filled, 4+15*_i, 15);
     }
     draw_set_colour(c_white);
     var _gem_string = string(global.gems);

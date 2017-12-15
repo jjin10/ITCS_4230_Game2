@@ -43,9 +43,9 @@ Menu
 
 Edita Moves/Mechanics: 
 	
-	Health Represented by marigold flower petals 
+	Health Represented by Hearts
 	
-	Shield Represented by metal marigold flower petals
+	Shield Represented by Yellow Bars
 	
 	Movement(arrow keys)
 	
@@ -71,9 +71,7 @@ Items/Pickups
 	
 	Skeleton Key  Unlocks Door
 	
-	Marigold Petal  Restores a point of Edita's health
-	
-	Metal Marigold  Petal Restores a point of shield health
+	Heart  Restores a point of Edita's health
 	
 	Racecar  Martin's Item
 	
@@ -222,4 +220,5 @@ Programming
 Music
 	http://ourmusicbox.com
 Art
-
+	https://www.udemy.com/make-an-action-rpg-in-gamemaker-studio-2/
+		Enemies, Health/Stamina UI, and Effects
